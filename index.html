@@ -129,10 +129,8 @@
     <script>
         function checkKey() {
             var keyInput = document.getElementById('keyInput').value.trim(); // Trim whitespace
-            if (keyInput === "PortalKey") {
+            if (keyInput === "PortalKey") { // Change "PortalKey" to whatever key you want
                 document.getElementById('keyForm').style.display = "none";
                 document.getElementById('gamePortal').style.display = "block";
             } else {
-                alert("Incorrect Key. Please try again.");
-            }
-       
+                alert("Incorrect Key. Please try again
