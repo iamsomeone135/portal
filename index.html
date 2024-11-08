@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Your CSS styles here */
+    </style>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <h1>Game Portal</h1>
+
+    <div class="content-container">
+        <div id="keyForm">
+            <h2>Key Required</h2>
+            <input type="text" id="keyInput" placeholder="Enter Key">
+            <br>
+            <button onclick="checkKey()">Submit</button>
+        </div>
+
+        <div id="gamePortal" style="display:none;">
+            <ul class="game-list">
+                <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
+                <li><a href="#" onclick="openGame('https://fb.nbadebate.com')">FootBall Bros</a></li>
+                <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
+                <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li>
+            </ul>
+        </div>
+
+        <div id="emailForm" style="display:none;">
+            <h2>Request Password</h2>
+            <input type="email" id="emailInput" placeholder="Enter your email">
+            <button onclick="sendEmail()">Send Request</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+        })();
+
+        let attempts = 0;
+
+        function checkKey() {
+            const keyInput = document.getElementById('keyInput').value;
+            if (keyInput === "PortalKey") {
+                document.getElementById('keyForm').style.display = "none";
+                document.getElementById('gamePortal').style.display = "block";
+            } else {
+                attempts++;
+                if (attempts >= 3) {
+                    document.getElementById('keyForm').style.display = "none";
+                    document.getElementById('emailForm').style.display = "block";
+                } else {
+                    alert("Incorrect Key. Please try again.");
+                }
+            }
+        }
+
+        function sendEmail() {
+            const emailInput = document.getElementById('emailInput').value;
+
+            const templateParams = {
+                email: emailInput,
+            };
+
+            emailjs.send('service_oo0djod', 'template_lq30l6m', templateParams)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                    document.getElementById('emailInput').value = ''; // Clear input
+                }, function(error) {
+                    alert('Error sending email: ' + JSON.stringify(error));
+                });
+        }
+
+        function openGame(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
