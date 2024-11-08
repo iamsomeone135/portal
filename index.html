@@ -6,48 +6,23 @@
     <title>Game Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Color Palette */
-        :root {
-            --background-color: #A8D5BA; /* Background color */
-            --primary-color: #ADD8E6; /* Light blue for buttons and links */
-            --hover-color: #E2E6EA; /* Light gray for hover effects */
-            --text-color: #333; /* Dark text color */
-        }
-
-        /* Remove all default margin and padding */
-        * {
+        /* Reset margin and padding for html and body */
+        html, body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            height: 100%; /* Ensure full height */
+            background-color: #A8D5BA; /* Mid-dark light green */
+        }
+        
+        body {
+            font-family: 'Dosis', sans-serif; /* Use Dosis font */
+            font-weight: bold; /* Set font to bold */
+            text-align: center;
+            padding: 50px;
         }
 
-        /* Ensure body and html take up the full screen */
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-            font-family: 'Dosis', sans-serif;
-            font-weight: bold;
-            background-color: var(--background-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        /* Title styling */
         h1 {
-            color: var(--text-color);
-            margin-top: 20px;
-        }
-
-        /* Center content vertically */
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
+            color: #333;
         }
 
         .game-list {
@@ -62,8 +37,8 @@
         .game-list a {
             text-decoration: none;
             font-size: 20px;
-            color: var(--primary-color);
-            background-color: var(--primary-color);
+            color: #007bff;
+            background-color: #ADD8E6; /* Light blue square covering */
             padding: 20px 40px;
             border-radius: 10px;
             transition: background-color 0.3s;
@@ -71,7 +46,7 @@
         }
 
         .game-list a:hover {
-            background-color: var(--hover-color);
+            background-color: #E2E6EA;
         }
 
         #gamePortal {
@@ -91,46 +66,54 @@
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: var(--primary-color);
+            background-color: #ADD8E6;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: var(--hover-color);
+            background-color: #E2E6EA;
         }
     </style>
 </head>
 <body>
-    <!-- Title at the top -->
     <h1>Game Portal</h1>
+    <div id="keyForm">
+        <h2>Key Required</h2>
+        <input type="text" id="keyInput" placeholder="Enter Key">
+        <br>
+        <button onclick="checkKey()">Submit</button>
+    </div>
 
-    <!-- Centered content area -->
-    <div class="content-container">
-        <div id="keyForm">
-            <h2>Key Required</h2>
-            <input type="text" id="keyInput" placeholder="Enter Key">
-            <br>
-            <button onclick="checkKey()">Submit</button>
-        </div>
-
-        <div id="gamePortal">
-            <ul class="game-list">
-                <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
-                <li><a href="#" onclick="openGame('https://fb.nbadebate.com')">FootBall Bros</a></li>
-                <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
-                <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li>
-                <li><a href="#" onclick="openGame('https://www.google.com')">Google</a></li> <!-- Google link added -->
-            </ul>
-        </div>
+    <div id="gamePortal">
+        <ul class="game-list">
+            <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
+            <li><a href="#" onclick="openGame('https://fb.nbadebate.com')">FootBall Bros</a></li>
+            <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
+            <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li>
+        </ul>
     </div>
 
     <script>
         function checkKey() {
-            var keyInput = document.getElementById('keyInput').value.trim(); // Trim whitespace
-            if (keyInput === "PortalKey") { // Change "PortalKey" to whatever key you want
+            var keyInput = document.getElementById('keyInput').value;
+            if (keyInput === "PortalKey") {
                 document.getElementById('keyForm').style.display = "none";
                 document.getElementById('gamePortal').style.display = "block";
             } else {
-                alert("Incorrect Key. Please try again
+                alert("Incorrect Key. Please try again.");
+            }
+        }
+
+        function openGame(url) {
+            var newWindow = window.open('about:blank', '_blank'); // Open a blank page
+            newWindow.document.title = "about:blank"; // Set title of about:blank page
+            newWindow.document.write('<html><head><title>about:blank</title></head><body>');
+            newWindow.document.write('<iframe src="' + url + '" width="100%" height="100%" style="border: none;"></iframe>');
+            newWindow.document.write('</body></html>');
+            newWindow.document.close();
+
+            // Request fullscreen after the page is loaded
+            newWindow.document.body.onload = function() {
+                if (newWindow.document.documentElement
