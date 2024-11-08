@@ -6,9 +6,56 @@
     <title>Game Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Your CSS styles here */
+        /* Remove all default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensure body and html take up the full screen */
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: 'Dosis', sans-serif;
+            font-weight: bold;
+            background-color: #A8D5BA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Title styling */
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+
+        /* Game portal styling */
+        .content-container {
+            text-align: center;
+        }
+
+        /* Game list styling */
+        .game-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .game-list li {
+            margin: 10px 0;
+        }
+
+        /* Iframe styling */
+        #googleForm {
+            display: none; /* Initially hidden */
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+            border: none;
+        }
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <h1>Game Portal</h1>
@@ -31,18 +78,13 @@
         </div>
 
         <div id="emailForm" style="display:none;">
-            <h2>Request Password</h2>
-            <input type="email" id="emailInput" placeholder="Enter your email">
-            <button onclick="sendEmail()">Send Request</button>
+            <h2>Request Access</h2>
+            <p>Please fill out the form below to request access:</p>
+            <iframe id="googleForm" src="https://forms.gle/ZCrZguGbaYVFcFAC8" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
 
     <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("FJF1hd_DKqFRBb1MR"); // Replace with your EmailJS User ID
-        })();
-
         let attempts = 0;
 
         function checkKey() {
@@ -55,26 +97,11 @@
                 if (attempts >= 3) {
                     document.getElementById('keyForm').style.display = "none";
                     document.getElementById('emailForm').style.display = "block";
+                    document.getElementById('googleForm').style.display = "block"; // Show the Google Form
                 } else {
                     alert("Incorrect Key. Please try again.");
                 }
             }
-        }
-
-        function sendEmail() {
-            const emailInput = document.getElementById('emailInput').value;
-
-            const templateParams = {
-                email: emailInput,
-            };
-
-            emailjs.send('service_oo0djod', 'template_lq30l6m', templateParams)
-                .then(function(response) {
-                    alert('Email sent successfully!');
-                    document.getElementById('emailInput').value = ''; // Clear input
-                }, function(error) {
-                    alert('Error sending email: ' + JSON.stringify(error));
-                });
         }
 
         function openGame(url) {
