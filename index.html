@@ -63,9 +63,29 @@
         function openGame(url) {
             var newWindow = window.open('about:blank', '_blank'); // Open a blank tab
             newWindow.document.title = "about:blank"; // Set title of about:blank page
-            newWindow.document.write('<html><head><title>about:blank</title></head><body>');
-            newWindow.document.write('<iframe src="' + url + '" width="100%" height="100%" style="border: none;"></iframe>');
-            newWindow.document.write('</body></html>');
+            newWindow.document.write(`
+                <html>
+                    <head>
+                        <title>about:blank</title>
+                        <style>
+                            html, body {
+                                margin: 0;
+                                padding: 0;
+                                height: 100%;
+                                background-color: #A8D5BA; /* Match the background color */
+                            }
+                            iframe {
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <iframe src="${url}"></iframe>
+                    </body>
+                </html>
+            `);
             newWindow.document.close();
             window.close(); // Close the game portal page
         }
