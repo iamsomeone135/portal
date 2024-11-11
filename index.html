@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Portal</title>
+    <title>Google Classroom</title>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <style>
         html, body {
@@ -24,9 +24,32 @@
             color: #333; /* Dark text color */
         }
 
+        .key-input {
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-right: 20px; /* Space between input and button */
+        }
+
+        .confirm-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff; /* Button color */
+            color: white; /* Button text color */
+            border: none;
+            cursor: pointer;
+        }
+
+        .confirm-button:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+
         .website-list {
             list-style-type: none;
             padding: 0;
+            display: none; /* Initially hidden */
+            margin-top: 20px;
         }
 
         .website-list li {
@@ -47,20 +70,14 @@
         .website-list a:hover {
             background-color: #E2E6EA; /* Hover color */
         }
-
-        .key-input {
-            margin: 20px 0;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
     <h1>Access the Website List</h1>
     <input type="text" class="key-input" placeholder="Enter Key" id="keyInput">
-    <button onclick="checkKey()">Access Websites</button>
-    <ul class="website-list" id="websiteList" style="display: none;">
+    <button class="confirm-button" onclick="checkKey()">Confirm</button>
+    
+    <ul class="website-list" id="websiteList">
         <li><a href="https://susuproxcy.github.io/susug/" target="_blank">OvO</a></li>
         <li><a href="https://fb.nbadebate.com" target="_blank">FootBall Bros</a></li>
         <li><a href="https://sandstrike.io" target="_blank">SandStrike</a></li>
@@ -71,7 +88,7 @@
     <script>
         function checkKey() {
             var inputKey = document.getElementById('keyInput').value;
-            var correctKey = "Portable"; // The actual key derived from \x50\x6F\x72\x74\x61\x6C\x6B\x65\x79
+            var correctKey = "PortalKey"; // The required key
             if (inputKey === correctKey) {
                 document.getElementById('websiteList').style.display = 'block'; // Show the website list
             } else {
