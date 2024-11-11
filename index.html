@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Classroom</title> <!-- Set the tab title to "Google Classroom" -->
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet"> <!-- Import Dosis font -->
+    <title>Google Classroom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Reset margin and padding for html and body */
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%; /* Ensure full height */
-            background-color: #A8D5BA; /* Mid-dark light green */
+            height: 100%;
+            background-color: #A8D5BA;
         }
 
         body {
-            font-family: 'Dosis', sans-serif; /* Use Dosis font */
-            font-weight: bold; /* Set font to bold */
+            font-family: 'Dosis', sans-serif;
+            font-weight: bold;
             text-align: center;
             padding: 50px;
         }
@@ -38,7 +37,7 @@
             text-decoration: none;
             font-size: 20px;
             color: #007bff;
-            background-color: #ADD8E6; /* Light blue square covering */
+            background-color: #ADD8E6;
             padding: 20px 40px;
             border-radius: 10px;
             transition: background-color 0.3s;
@@ -48,48 +47,61 @@
         .game-list a:hover {
             background-color: #E2E6EA;
         }
+
+        .key-input {
+            margin: 20px 0;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>Game Portal</h1>
+    <input type="text" class="key-input" placeholder="Enter Key" id="keyInput">
     <ul class="game-list">
         <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
         <li><a href="#" onclick="openGame('https://fb.nbadebate.com')">FootBall Bros</a></li>
         <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
-        <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li> <!-- Proxy square -->
-        <li><a href="#" onclick="openGame('https://www.google.com')">Google</a></li> <!-- Link to Google -->
+        <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li>
+        <li><a href="#" onclick="openGame('https://www.google.com')">Google</a></li>
     </ul>
 
     <script>
         function openGame(url) {
-            var newWindow = window.open('about:blank', '_blank'); // Open a blank tab
-            newWindow.document.title = "Google"; // Set title of the new page
-            newWindow.document.write(`
-                <html>
-                    <head>
-                        <title>Google</title>
-                        <style>
-                            html, body {
-                                margin: 0;
-                                padding: 0;
-                                height: 100%;
-                                background-color: #A8D5BA; /* Match the background color */
-                            }
-                            iframe {
-                                width: 100%;
-                                height: 100%;
-                                border: none;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <iframe src="${url}"></iframe>
-                    </body>
-                </html>
-            `);
-            newWindow.document.close();
-            window.close(); // Close the game portal page
+            var inputKey = document.getElementById('keyInput').value;
+            var correctKey = "Portable"; // The actual key derived from \x50\x6F\x72\x74\x61\x6C\x6B\x65\x79
+            if (inputKey === correctKey) {
+                var newWindow = window.open('about:blank', '_blank');
+                newWindow.document.title = "Game";
+                newWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>Game</title>
+                            <style>
+                                html, body {
+                                    margin: 0;
+                                    padding: 0;
+                                    height: 100%;
+                                    background-color: #A8D5BA;
+                                }
+                                iframe {
+                                    width: 100%;
+                                    height: 100%;
+                                    border: none;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <iframe src="${url}"></iframe>
+                        </body>
+                    </html>
+                `);
+                newWindow.document.close();
+            } else {
+                alert("Incorrect Key. Please try again.");
+            }
         }
     </script>
 </body>
-</
+</html>
