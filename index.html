@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Classroom</title>
+    <title>Access Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <style>
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #A8D5BA;
+            background-color: #A8D5BA; /* Light green background */
         }
 
         body {
@@ -21,31 +21,31 @@
         }
 
         h1 {
-            color: #333;
+            color: #333; /* Dark text color */
         }
 
-        .game-list {
+        .website-list {
             list-style-type: none;
             padding: 0;
         }
 
-        .game-list li {
+        .website-list li {
             margin: 20px 0;
         }
 
-        .game-list a {
+        .website-list a {
             text-decoration: none;
             font-size: 20px;
-            color: #007bff;
-            background-color: #ADD8E6;
+            color: #007bff; /* Link color */
+            background-color: #ADD8E6; /* Light blue background */
             padding: 20px 40px;
             border-radius: 10px;
             transition: background-color 0.3s;
             display: inline-block;
         }
 
-        .game-list a:hover {
-            background-color: #E2E6EA;
+        .website-list a:hover {
+            background-color: #E2E6EA; /* Hover color */
         }
 
         .key-input {
@@ -57,47 +57,23 @@
     </style>
 </head>
 <body>
-    <h1>Game Portal</h1>
+    <h1>Access the Website List</h1>
     <input type="text" class="key-input" placeholder="Enter Key" id="keyInput">
-    <ul class="game-list">
-        <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
-        <li><a href="#" onclick="openGame('https://fb.nbadebate.com')">FootBall Bros</a></li>
-        <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
-        <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li>
-        <li><a href="#" onclick="openGame('https://www.google.com')">Google</a></li>
+    <button onclick="checkKey()">Access Websites</button>
+    <ul class="website-list" id="websiteList" style="display: none;">
+        <li><a href="https://susuproxcy.github.io/susug/" target="_blank">OvO</a></li>
+        <li><a href="https://fb.nbadebate.com" target="_blank">FootBall Bros</a></li>
+        <li><a href="https://sandstrike.io" target="_blank">SandStrike</a></li>
+        <li><a href="https://geographyles.com" target="_blank">Proxy</a></li>
+        <li><a href="https://www.google.com" target="_blank">Google</a></li>
     </ul>
 
     <script>
-        function openGame(url) {
+        function checkKey() {
             var inputKey = document.getElementById('keyInput').value;
             var correctKey = "Portable"; // The actual key derived from \x50\x6F\x72\x74\x61\x6C\x6B\x65\x79
             if (inputKey === correctKey) {
-                var newWindow = window.open('about:blank', '_blank');
-                newWindow.document.title = "Game";
-                newWindow.document.write(`
-                    <html>
-                        <head>
-                            <title>Game</title>
-                            <style>
-                                html, body {
-                                    margin: 0;
-                                    padding: 0;
-                                    height: 100%;
-                                    background-color: #A8D5BA;
-                                }
-                                iframe {
-                                    width: 100%;
-                                    height: 100%;
-                                    border: none;
-                                }
-                            </style>
-                        </head>
-                        <body>
-                            <iframe src="${url}"></iframe>
-                        </body>
-                    </html>
-                `);
-                newWindow.document.close();
+                document.getElementById('websiteList').style.display = 'block'; // Show the website list
             } else {
                 alert("Incorrect Key. Please try again.");
             }
