@@ -70,6 +70,15 @@
         .website-list a:hover {
             background-color: #E2E6EA; /* Hover color */
         }
+
+        /* Style for the iframe */
+        .form-iframe {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            border: none; /* Remove border */
+            width: 640px;
+            height: 587px;
+        }
     </style>
 </head>
 <body>
@@ -85,16 +94,17 @@
         <li><a href="https://www.google.com" target="_blank">Google</a></li>
     </ul>
 
+    <iframe class="form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSenSHYUxDWtXgiQgfbU9dHPgDKDPySa__zptqZCzCbptY5doQ/viewform?embedded=true" loading="lazy">Loading…</iframe>
+
     <script>
         function checkKey() {
             var inputKey = document.getElementById('keyInput').value;
             var correctKey = "PortalKey"; // The required key
             if (inputKey === correctKey) {
                 document.getElementById('websiteList').style.display = 'block'; // Show the website list
+                document.querySelector('.form-iframe').style.display = 'block'; // Show the iframe
             } else {
                 alert("Incorrect Key. Please try again.");
             }
         }
-    </script>
-</body>
-</html>
+    </
