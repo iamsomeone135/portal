@@ -17,18 +17,18 @@
             color: #333;
         }
         .game-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .game-list li {
-            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .game-list a {
             text-decoration: none;
             font-size: 20px;
             color: #007bff;
             background-color: #ADD8E6;
-            padding: 20px 40px;
+            padding: 20px;
             border-radius: 10px;
             transition: background-color 0.3s;
             display: inline-block;
@@ -70,28 +70,33 @@
     </div>
 
     <div id="gamePortal">
-        <ul class="game-list">
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/shellshockers/preview/preview.html'); return false;">Shell Shockers</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/townscaper/preview/preview.html'); return false;">Townscaper</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/cookieclicker/preview/preview.html'); return false;">Cookie Clicker</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/fireboyandwatergirl4/preview/preview.html'); return false;">Fireboy and Watergirl 4</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/appel/preview/preview.html'); return false;">Appel</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/basketbros/preview/preview.html'); return false;">BasketBros</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/1v1lol/preview/preview.html'); return false;">1v1.lol</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/run3/preview/preview.html'); return false;">Run 3</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/amongus/preview/preview.html'); return false;">Among Us Singleplayer</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/cubefield/preview/preview.html'); return false;">Cubefield</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/slope/preview/preview.html'); return false;">Slope</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/impossiblequiz/preview/preview.html'); return false;">The Impossible Quiz</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/burritobison/preview/preview.html'); return false;">Burrito Bison</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/uno/preview/preview.html'); return false;">Uno</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/thereisnogame/preview/preview.html'); return false;">There Is No Game</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/subwaysurfers/preview/preview.html'); return false;">Subway Surfers</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/deathrun3d/preview/preview.html'); return false;">Death Run 3D</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/tetris/preview/preview.html'); return false;">Tetris</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/snake/index.html'); return false;">Snake</a></li>
-            <li><a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/galaga/preview/preview.html'); return false;">Galaga</a></li>
-        </ul>
+        <div class="game-list">
+            <!-- Existing and Added Games in Two Columns, Seven per Row -->
+            <a href="about:blank" onclick="openGame('https://susuproxcy.github.io/susug/'); return false;">OvO</a>
+            <a href="about:blank" onclick="openGame('https://fb.nbadebate.com'); return false;">FootBall Bros</a>
+            <a href="about:blank" onclick="openGame('https://sandstrike.io'); return false;">SandStrike</a>
+            <a href="about:blank" onclick="openGame('https://geographyles.com'); return false;">Proxy</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/shellshockers/preview/preview.html'); return false;">Shell Shockers</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/townscaper/preview/preview.html'); return false;">Townscaper</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/cookieclicker/preview/preview.html'); return false;">Cookie Clicker</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/fireboyandwatergirl4/preview/preview.html'); return false;">Fireboy and Watergirl 4</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/appel/preview/preview.html'); return false;">Appel</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/basketbros/preview/preview.html'); return false;">BasketBros</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/1v1lol/preview/preview.html'); return false;">1v1.lol</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/run3/preview/preview.html'); return false;">Run 3</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/amongus/preview/preview.html'); return false;">Among Us Singleplayer</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/cubefield/preview/preview.html'); return false;">Cubefield</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/slope/preview/preview.html'); return false;">Slope</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/impossiblequiz/preview/preview.html'); return false;">The Impossible Quiz</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/burritobison/preview/preview.html'); return false;">Burrito Bison</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/uno/preview/preview.html'); return false;">Uno</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/thereisnogame/preview/preview.html'); return false;">There Is No Game</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/subwaysurfers/preview/preview.html'); return false;">Subway Surfers</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/deathrun3d/preview/preview.html'); return false;">Death Run 3D</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/tetris/preview/preview.html'); return false;">Tetris</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/snake/index.html'); return false;">Snake</a>
+            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/galaga/preview/preview.html'); return false;">Galaga</a>
+        </div>
     </div>
 
     <script>
