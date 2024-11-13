@@ -1,15 +1,17 @@
+
+You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Classroom</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+    <title>Google Classroom</title> <!-- Set the tab title to "Google Classroom" -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet"> <!-- Import Dosis font -->
     <style>
         body {
-            font-family: 'Dosis', sans-serif;
-            font-weight: bold;
-            background-color: #A8D5BA;
+            font-family: 'Dosis', sans-serif; /* Use Dosis font */
+            font-weight: bold; /* Set font to bold */
+            background-color: #A8D5BA; /* Mid-dark light green */
             text-align: center;
             padding: 50px;
         }
@@ -17,21 +19,22 @@
             color: #333;
         }
         .game-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            list-style-type: none;
+            padding: 0;
+        }
+        .game-list li {
+            margin: 20px 0;
         }
         .game-list a {
             text-decoration: none;
             font-size: 20px;
             color: #007bff;
-            background-color: #ADD8E6;
-            padding: 20px;
+            background-color: white; /* White square background */
+            padding: 20px 40px;
             border-radius: 10px;
             transition: background-color 0.3s;
             display: inline-block;
+            background-color: #ADD8E6; /* Light blue square covering */
         }
         .game-list a:hover {
             background-color: #E2E6EA;
@@ -70,33 +73,12 @@
     </div>
 
     <div id="gamePortal">
-        <div class="game-list">
-            <!-- Existing and Added Games in Two Columns, Seven per Row -->
-            <a href="about:blank" onclick="openGame('https://susuproxcy.github.io/susug/'); return false;">OvO</a>
-            <a href="about:blank" onclick="openGame('https://fb.nbadebate.com'); return false;">FootBall Bros</a>
-            <a href="about:blank" onclick="openGame('https://sandstrike.io'); return false;">SandStrike</a>
-            <a href="about:blank" onclick="openGame('https://geographyles.com'); return false;">Proxy</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/shellshockers/preview/preview.html'); return false;">Shell Shockers</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/townscaper/preview/preview.html'); return false;">Townscaper</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/cookieclicker/preview/preview.html'); return false;">Cookie Clicker</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/fireboyandwatergirl4/preview/preview.html'); return false;">Fireboy and Watergirl 4</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/appel/preview/preview.html'); return false;">Appel</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/basketbros/preview/preview.html'); return false;">BasketBros</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/1v1lol/preview/preview.html'); return false;">1v1.lol</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/run3/preview/preview.html'); return false;">Run 3</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/amongus/preview/preview.html'); return false;">Among Us Singleplayer</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/cubefield/preview/preview.html'); return false;">Cubefield</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/slope/preview/preview.html'); return false;">Slope</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/impossiblequiz/preview/preview.html'); return false;">The Impossible Quiz</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/burritobison/preview/preview.html'); return false;">Burrito Bison</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/uno/preview/preview.html'); return false;">Uno</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/thereisnogame/preview/preview.html'); return false;">There Is No Game</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/subwaysurfers/preview/preview.html'); return false;">Subway Surfers</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/deathrun3d/preview/preview.html'); return false;">Death Run 3D</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/tetris/preview/preview.html'); return false;">Tetris</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/snake/index.html'); return false;">Snake</a>
-            <a href="about:blank" onclick="openGame('https://orcatech2711.github.io/nano/games/galaga/preview/preview.html'); return false;">Galaga</a>
-        </div>
+        <ul class="game-list">
+            <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
+            <li><a href="#" onclick="openGame('https://fb.nbadebate.com')">FootBall Bros</a></li>
+            <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
+            <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li> <!-- Proxy square -->
+        </ul>
     </div>
 
     <script>
@@ -111,16 +93,16 @@
         }
 
         function openGame(url) {
-            var newWindow = window.open('about:blank', '_blank');
-            newWindow.document.title = "Game Portal";
-            newWindow.document.write('<html><head><title>Game Portal</title>');
-            newWindow.document.write('<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">');
-            newWindow.document.write('<style>html, body { font-family: "Dosis", sans-serif; margin: 0; padding: 0; height: 100%; background-color: #A8D5BA; }');
-            newWindow.document.write('iframe { width: 100%; height: 100%; border: none; }</style>');
+            var newWindow = window.open('about:blank', '_blank'); // Open a blank page
+            newWindow.document.title = "about:blank"; // Set title of about:blank page
+            newWindow.document.write('<html><head><title>about:blank</title>');
+            newWindow.document.write('<style>html, body { margin: 0; padding: 0; height: 100%; }</style>'); // Remove margin and padding
             newWindow.document.write('</head><body>');
-            newWindow.document.write('<iframe src="' + url + '"></iframe>');
+            newWindow.document.write('<iframe src="' + url + '" width="100%" height="100%" style="border: none;"></iframe>');
             newWindow.document.write('</body></html>');
             newWindow.document.close();
+
+            window.close(); // Close the game portal page
         }
     </script>
 </body>
