@@ -59,12 +59,6 @@
         button:hover {
             background-color: #E2E6EA;
         }
-        .small-text {
-            font-size: 16px;
-            color: #007bff;
-            cursor: pointer;
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -79,10 +73,12 @@
     <div id="gamePortal">
         <ul class="game-list">
             <li><a href="#" onclick="openGame('https://susuproxcy.github.io/susug/')">OvO</a></li>
+            <li><a href="#" onclick="openGame('https://orcatech2711.github.io/nano/games/basketbros/index.html')">FootBall and BasketBall Bros</a></li>
             <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
             <li><a href="#" onclick="openGame('https://geographyles.com')">Proxy</a></li>
+            <li><a href="#" onclick="openGame('https://susuproxcy.github.io/cookieclicker')">Cookie Clicker</a></li>
+            <li><a href="#" onclick="openGame('https://sandstrike.io')">SandStrike</a></li>
         </ul>
-        <p><span class="small-text" onclick="openNewPage()">Click here for more games</span></p>
     </div>
 
     <script>
@@ -107,22 +103,6 @@
             newWindow.document.close();
 
             window.close(); // Close the game portal page
-        }
-
-        function openNewPage() {
-            var password = prompt("Enter the password:");
-            if (password === "susu1357!") {
-                var newWindow = window.open('about:blank', '_blank'); // Open a blank page
-                newWindow.document.title = "about:blank"; // Set title of about:blank page
-                newWindow.document.write('<html><head><title>about:blank</title>');
-                newWindow.document.write('<style>html, body { margin: 0; padding: 0; height: 100%; }</style>'); // Remove margin and padding
-                newWindow.document.write('</head><body>');
-                newWindow.document.write('<iframe src="https://geographyles.com/service/hvtrs8%2F-dksaopd%2Ccmm-cjalnglq%2FBmg" width="100%" height="100%" style="border: none;"></iframe>'); // Placeholder for your link
-                newWindow.document.write('</body></html>');
-                newWindow.document.close();
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
         }
     </script>
 </body>
